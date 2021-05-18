@@ -1,0 +1,28 @@
+version: '3'
+services:
+  g1:
+    image: filipeguimaraes99/amu-g1-idealista:latest
+    container_name: g1
+    ports:
+     - "8000:8000"
+  
+  g2:
+    image: joaocadavezz/cmuubicompg2:latest
+    container_name: g2
+    ports:
+     - "8080:8080"
+  g3:
+    image: moisesramires/g3:latest
+    container_name: g3
+    ports:
+     - "9595:9595"
+
+  web:
+    build: '.'
+    container_name: web
+    ports:
+      - "8181:8181"
+    links:
+      - "g1:g1"
+      - "g2:g2"
+      - "g3:g3"
