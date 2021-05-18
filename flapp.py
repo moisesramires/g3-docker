@@ -120,8 +120,12 @@ def street_info():
 		template=template.replace("NOMEDARUA",rua);
 
 		open(name, "w").write(template);
-		return render_template("./"+name)
+		final = " <h1><b>Alojamento Local</b></h1>"
+		final += "<p>" + hostel + "</p>"
+		final += " <h1><b>Freguesia</b></h1>"
+		final += "<p>" + hist + "</p>"
 
+		return final		
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port='9595')
+	app.run(debug=True, host='0.0.0.0', port='9595')
