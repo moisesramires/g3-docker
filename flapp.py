@@ -110,16 +110,10 @@ def street_info():
 		
 		if hostel=="":
 			hostel="Sem hostels na área"
-		template=template.replace("ALOJAMENTOLOCAL",hostel);
 		print(hostel)
 
 
-
-
-		template=template.replace("NOMEDAFREGUESIA",freguesia);
-		template=template.replace("NOMEDARUA",rua);
-
-		open(name, "w").write(template);
+		open(name, "w").write(final);
 		final = " <h1><b>Alojamento Local</b></h1>"
 		final += "<p>" + hostel + "</p>"
 		final += " <h1><b>Freguesia</b></h1>"
