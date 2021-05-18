@@ -42,7 +42,8 @@ def street_info():
 
 
 	if(path.exists(name)):
-		return render_template("./"+name)
+		template = open(name, "r").read();
+		return template
 
 	else:
 
@@ -88,7 +89,6 @@ def street_info():
 					b=True
 			
 		print(hist)
-		template=template.replace("INFOFREGUESIA",hist);
 
 		
 		
@@ -113,11 +113,11 @@ def street_info():
 		print(hostel)
 
 
-		open(name, "w").write(final);
 		final = " <h1><b>Alojamento Local</b></h1>"
 		final += "<p>" + hostel + "</p>"
 		final += " <h1><b>Freguesia</b></h1>"
 		final += "<p>" + hist + "</p>"
+		open(name, "w").write(final);
 
 		return final		
 
